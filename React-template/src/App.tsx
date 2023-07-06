@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUsername } from './store/features/userSlice';
+import { setUsername } from './store/features/UserSlice';
 import { RootState, AppDispatch } from './store/store';
 import { useSnackbar, closeSnackbar } from 'notistack';
 import { Button } from '@mui/material';
@@ -18,6 +18,10 @@ function App() {
 
   return (
     <div>
+      <div>
+        Username: {username}
+      </div>
+      <input type="text" value={username} onChange={handleUsernameChange} placeholder="Enter username" />
       <Button
         sx={{
           bgcolor: 'secondary.main',
