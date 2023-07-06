@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUsername } from './features/userSlice';
-import { RootState, AppDispatch } from './store';
+import { setUsername } from './store/features/userSlice';
+import { RootState, AppDispatch } from './store/store';
 import { useSnackbar, closeSnackbar } from 'notistack';
 import { Button } from '@mui/material';
 
