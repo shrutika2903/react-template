@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store/store.tsx';
 import App from './App.tsx';
-import './index.css';
 import { SnackbarProvider } from 'notistack';
-import theme from './theme';
+import theme from './styles/theme.ts';
 import { ThemeProvider } from '@emotion/react';
 
 
