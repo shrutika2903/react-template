@@ -4,7 +4,7 @@ import { LoginPage } from './pages';
 import Box from '@mui/material/Box';
 
 
-const App = (userName: string, password: string) => {
+const App = () => {
   const [title, setTitle] = useState("Title");
   const [date, setDate] = useState("07th July, 2023");
 
@@ -27,7 +27,7 @@ const App = (userName: string, password: string) => {
       </Box>
 
        
-        <LoginPage userName={userName} password={password} />
+        <LoginPage />
     </>
   );
 };

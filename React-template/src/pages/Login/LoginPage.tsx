@@ -5,12 +5,8 @@ import { Button } from '@mui/material';
 import Paper from '@mui/material/Paper';
 
 
-type LoginProps = {
-    userName: string;
-    password: string;
-}
 
-const LoginPage = (props: LoginProps) => {
+const LoginPage = () => {
     const [userName, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [userNameError, setUserNameError] = useState('');
@@ -55,7 +51,7 @@ const LoginPage = (props: LoginProps) => {
 
                             <TextField
                                 label="Username"
-                                value={props.userName}
+                                placeholder='Username'
                                 onChange={(e) => setUsername(e.target.value)}
                                 error={Boolean(userNameError)}
                                 helperText={userNameError}
@@ -66,8 +62,8 @@ const LoginPage = (props: LoginProps) => {
 
                             <TextField
                                 label="Password"
-                                type="password"
-                                value={props.password}
+                                type="Password"
+                                placeholder='Password'
                                 onChange={(e) => setPassword(e.target.value)}
                                 error={Boolean(passWordError)}
                                 helperText={passWordError}
