@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
 import MyComponent from './components/Header';
+import { LoginPage } from './pages';
+import Box from '@mui/material/Box';
 
-const App = () => {
+
+const App = (userName: string, password: string) => {
   const [title, setTitle] = useState("Title");
   const [date, setDate] = useState("07th July, 2023");
 
@@ -12,15 +14,21 @@ const App = () => {
   }, []);
 
   return (
-    <Box sx={{
-      color: 'white',
-      fontSize: '14px',
-      backgroundColor: 'grey',
-      padding: '10px',
-      textAlign: 'center'
-     }} >
-      <MyComponent title={title} date={date} />
-    </Box>
+    <>
+      <Box
+        sx={{
+          color: 'white',
+          fontSize: '14px',
+          backgroundColor: '#4caf50',
+          padding: '10px',
+          textAlign: 'center'
+        }}>
+        <MyComponent title={title} date={date} />
+      </Box>
+
+       
+        <LoginPage userName={userName} password={password} />
+    </>
   );
 };
 

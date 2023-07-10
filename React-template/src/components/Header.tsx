@@ -11,10 +11,10 @@ const Header = (props: HeaderProps) => {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         {title}
       </Typography>
-      <Typography variant="h3" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         {date}
       </Typography>
     </Box>
