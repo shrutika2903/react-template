@@ -1,35 +1,35 @@
+//Import Statements
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import Paper from '@mui/material/Paper';
 
-
-
 const LoginPage = () => {
-    const [userName, setUsername] = useState('');
+    // Setting up a state variable and its setter function
+    const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [userNameError, setUserNameError] = useState('');
     const [passWordError, setPasswordError] = useState('');
 
-
+    //Function to handle login form submission
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-
+        //Validation for 'username' field 
         if (userName.length < 6) {
             setUserNameError('Username should be at least 6 characters long');
-            return;
+            return; //Exiting the function if there is error
         }
-
+        //Validation for 'password' field
         if (password.length < 8) {
             setPasswordError('Password should be 8 characters long');
             return;
         }
+        // Resetting the username & password error message if there is no error
         setUserNameError('');
         setPasswordError('');
-
-
     };
+    //return statement
 
     return (
         <>
@@ -48,11 +48,11 @@ const LoginPage = () => {
                 <Paper elevation={10} >
                     <form onSubmit={handleLogin}>
                         <Box sx={{ display: 'flex', margin: '50px', justifyContent: 'center' }}>
-
+                            {/* Text Input for Username & Password */}
                             <TextField
                                 label="Username"
                                 placeholder='Username'
-                                onChange={(e) => setUsername(e.target.value)}
+                                onChange={(e) => setUserName(e.target.value)}
                                 error={Boolean(userNameError)}
                                 helperText={userNameError}
                                 fullWidth
@@ -71,6 +71,7 @@ const LoginPage = () => {
                             />
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                            {/* Login Button */}
                             <Button
                                 type="submit"
                                 variant="contained"
@@ -81,12 +82,11 @@ const LoginPage = () => {
                                 Login
                             </Button>
                         </Box>
-
                     </form>
                 </Paper>
             </Box>
         </>
     )
 };
-export default LoginPage;
+export default LoginPage; //export statement
 
